@@ -1,0 +1,71 @@
+<!--pages/index/index.wxml - 工作台首页-->
+<view class="page">
+  <!-- 顶部欢迎区域 -->
+  <view class="welcome-section">
+    <view class="welcome-text">
+      <text class="greeting">早上好，管理员</text>
+      <text class="sub-text">锦汇邦本地生活服务平台</text>
+    </view>
+  </view>
+
+  <!-- 数据统计卡片 -->
+  <view class="stats-grid">
+    <view class="stat-card">
+      <text class="stat-number">{{stats.houseCount}}</text>
+      <text class="stat-label">房源总数</text>
+    </view>
+    <view class="stat-card accent">
+      <text class="stat-number accent">{{stats.orderCount}}</text>
+      <text class="stat-label">今日订单</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-number">{{stats.userCount}}</text>
+      <text class="stat-label">用户总数</text>
+    </view>
+    <view class="stat-card accent">
+      <text class="stat-number accent">{{stats.revenue}}</text>
+      <text class="stat-label">今日营收(元)</text>
+    </view>
+  </view>
+
+  <!-- 功能快捷入口 -->
+  <view class="section-title">快捷功能</view>
+  <view class="quick-actions">
+    <view class="action-item" bindtap="goToHouse">
+      <view class="action-icon house-icon">🏠</view>
+      <text class="action-text">房源管理</text>
+    </view>
+    <view class="action-item" bindtap="goToFinance">
+      <view class="action-icon finance-icon">💰</view>
+      <text class="action-text">财务中心</text>
+    </view>
+    <view class="action-item" bindtap="goToOrder">
+      <view class="action-icon order-icon">📋</view>
+      <text class="action-text">订单管理</text>
+    </view>
+    <view class="action-item" bindtap="goToLocal">
+      <view class="action-icon local-icon">📍</view>
+      <text class="action-text">本地同城</text>
+    </view>
+  </view>
+
+  <!-- 最近订单 -->
+  <view class="section-title">最近订单</view>
+  <view class="order-list">
+    <view class="order-item" wx:for="{{recentOrders}}" wx:key="id">
+      <view class="order-info">
+        <text class="order-title">{{item.title}}</text>
+        <text class="order-time">{{item.time}}</text>
+      </view>
+      <view class="order-status {{item.statusClass}}">
+        <text>{{item.status}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 系统公告 -->
+  <view class="section-title">系统公告</view>
+  <view class="notice-card">
+    <text class="notice-text">{{announcement}}</text>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="header">
+    <text class="title">订单管理</text>
+  </view>
+  <view class="filter-tabs">
+    <view class="tab active">全部</view>
+    <view class="tab">进行中</view>
+    <view class="tab">已完成</view>
+  </view>
+  <view class="empty-state">
+    <text class="empty-text">暂无订单数据</text>
+  </view>
+</view>

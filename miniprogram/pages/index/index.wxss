@@ -1,0 +1,207 @@
+/* pages/index/index.wxss - 工作台首页样式 */
+
+.page {
+  padding: 0 24rpx 24rpx;
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+/* 欢迎区域 */
+.welcome-section {
+  background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+  margin: 0 -24rpx;
+  padding: 48rpx 32rpx;
+  color: #ffffff;
+}
+
+.greeting {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 12rpx;
+  font-family: 'PingFang SC', 'SF Pro Display', sans-serif;
+}
+
+.sub-text {
+  display: block;
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+
+/* 数据统计卡片 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24rpx;
+  margin-top: -40rpx;
+  padding: 0 8rpx;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 32rpx 24rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.stat-card.accent {
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+}
+
+.stat-number {
+  display: block;
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #1E3A8A;
+  font-family: 'SF Pro Display', 'PingFang SC', sans-serif;
+  margin-bottom: 8rpx;
+}
+
+.stat-number.accent {
+  color: #ffffff;
+}
+
+.stat-label {
+  display: block;
+  font-size: 24rpx;
+  color: #6B7280;
+}
+
+.stat-card.accent .stat-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 区块标题 */
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #111827;
+  margin: 40rpx 0 24rpx;
+  padding-left: 16rpx;
+  border-left: 8rpx solid #1E3A8A;
+}
+
+/* 快捷功能 */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24rpx 0;
+  background: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+}
+
+.action-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16rpx;
+  font-size: 40rpx;
+}
+
+.house-icon {
+  background-color: #EBF5FF;
+}
+
+.finance-icon {
+  background-color: #FEF3C7;
+}
+
+.order-icon {
+  background-color: #E0E7FF;
+}
+
+.local-icon {
+  background-color: #D1FAE5;
+}
+
+.action-text {
+  font-size: 24rpx;
+  color: #374151;
+}
+
+/* 订单列表 */
+.order-list {
+  background: #ffffff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+  margin-bottom: 24rpx;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28rpx 24rpx;
+  border-bottom: 1rpx solid #E5E7EB;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-info {
+  flex: 1;
+}
+
+.order-title {
+  display: block;
+  font-size: 28rpx;
+  color: #111827;
+  margin-bottom: 8rpx;
+}
+
+.order-time {
+  display: block;
+  font-size: 24rpx;
+  color: #6B7280;
+}
+
+.order-status {
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+}
+
+.status-active {
+  background-color: #DBEAFE;
+  color: #1E3A8A;
+}
+
+.status-completed {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.status-pending {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+/* 系统公告 */
+.notice-card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+  margin-bottom: 40rpx;
+}
+
+.notice-text {
+  font-size: 28rpx;
+  color: #374151;
+  line-height: 1.6;
+}

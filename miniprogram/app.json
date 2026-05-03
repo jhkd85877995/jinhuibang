@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/house/house",
+    "pages/finance/finance",
+    "pages/order/order",
+    "pages/local/local",
+    "pages/share/share",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1E3A8A",
+    "navigationBarTitleText": "锦汇邦",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F9FAFB"
+  },
+  "tabBar": {
+    "color": "#6B7280",
+    "selectedColor": "#1E3A8A",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "工作台"
+      },
+      {
+        "pagePath": "pages/house/house",
+        "text": "房源"
+      },
+      {
+        "pagePath": "pages/finance/finance",
+        "text": "财务"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "我的"
+      }
+    ]
+  },
+  "cloud": true,
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

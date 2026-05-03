@@ -1,0 +1,44 @@
+<!--pages/house/house.wxml - 房源管理-->
+<view class="page">
+  <view class="header">
+    <text class="title">房源管理</text>
+    <view class="add-btn" bindtap="addHouse">
+      <text class="add-icon">+</text>
+      <text>添加房源</text>
+    </view>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索房源名称/地址" bindinput="onSearch"/>
+  </view>
+
+  <!-- 筛选标签 -->
+  <view class="filter-tabs">
+    <view class="tab {{currentTab === 'all' ? 'active' : ''}}" bindtap="switchTab" data-tab="all">全部</view>
+    <view class="tab {{currentTab === 'vacant' ? 'active' : ''}}" bindtap="switchTab" data-tab="vacant">待租</view>
+    <view class="tab {{currentTab === 'rented' ? 'active' : ''}}" bindtap="switchTab" data-tab="rented">已租</view>
+    <view class="tab {{currentTab === 'review' ? 'active' : ''}}" bindtap="switchTab" data-tab="review">审核中</view>
+  </view>
+
+  <!-- 房源列表 -->
+  <view class="house-list">
+    <view class="house-card" wx:for="{{houses}}" wx:key="id" bindtap="viewHouse" data-id="{{item.id}}">
+      <image class="house-image" src="{{item.image}}" mode="aspectFill"></image>
+      <view class="house-info">
+        <text class="house-title">{{item.title}}</text>
+        <text class="house-address">{{item.address}}</text>
+        <view class="house-meta">
+          <text class="house-price">¥{{item.price}}/月</text>
+          <text class="house-status {{item.statusClass}}">{{item.status}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{houses.length === 0}}">
+    <text class="empty-icon">🏠</text>
+    <text class="empty-text">暂无房源，点击添加</text>
+  </view>
+</view>

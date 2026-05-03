@@ -1,0 +1,8 @@
+.page { padding: 24rpx; background: #F9FAFB; min-height: 100vh; }
+.header { margin-bottom: 32rpx; }
+.title { font-size: 40rpx; font-weight: bold; color: #111827; }
+.filter-tabs { display: flex; gap: 16rpx; margin-bottom: 32rpx; }
+.tab { padding: 16rpx 32rpx; background: #fff; border-radius: 8rpx; font-size: 28rpx; color: #6B7280; }
+.tab.active { background: #1E3A8A; color: #fff; }
+.empty-state { text-align: center; padding: 120rpx 0; }
+.empty-text { font-size: 28rpx; color: #6B7280; }
