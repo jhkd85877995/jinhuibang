@@ -19,7 +19,7 @@ Page({
   },
 
   loadHouses() {
-    // TODO: 从 CloudBase 加载房源数据
+    // 从 CloudBase 数据库获取房源数据
     const db = wx.cloud.database();
     let query = db.collection('houses');
     
@@ -36,7 +36,7 @@ Page({
       });
     }
 
-    query.get({
+    query.orderBy('createTime', 'desc').get({
       success: (res) => {
         const houses = res.data.map(item => ({
           id: item._id,
@@ -45,13 +45,13 @@ Page({
           price: item.price,
           status: this.getStatusText(item.status),
           statusClass: this.getStatusClass(item.status),
-          image: item.images ? item.images[0] : '/images/default-house.png'
+          image: item.images && item.images.length > 0 ? item.images[0] : ''
         }));
         this.setData({ houses });
       },
       fail: (err) => {
         console.error('加载房源失败', err);
-        // 模拟数据
+        // 模拟数据（当数据库不可用时）
         this.setData({
           houses: [
             { id: 1, title: '阳光花园 2室1厅', address: '朝阳区阳光花园小区', price: 4500, status: '待租', statusClass: 'status-vacant', image: '' },
@@ -61,7 +61,7 @@ Page({
         });
       }
     });
-  },
+  }, 
 
   switchTab(e) {
     const tab = e.currentTarget.dataset.tab;

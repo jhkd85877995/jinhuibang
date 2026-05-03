@@ -1,0 +1,74 @@
+<view class="page">
+  <view class="header">
+    <text class="title">添加房源</text>
+  </view>
+
+  <view class="form">
+    <!-- 房源图片 -->
+    <view class="form-section">
+      <text class="section-title">房源图片</text>
+      <view class="image-uploader">
+        <view class="image-list">
+          <view class="image-item" wx:for="{{images}}" wx:key="index">
+            <image src="{{item}}" mode="aspectFill" class="preview-image"/>
+            <view class="delete-btn" bindtap="deleteImage" data-index="{{index}}">×</view>
+          </view>
+          <view class="upload-btn" bindtap="chooseImage" wx:if="{{images.length < 9}}">
+            <text class="upload-icon">+</text>
+            <text class="upload-text">上传图片</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 基本信息 -->
+    <view class="form-section">
+      <text class="section-title">基本信息</text>
+      <view class="form-item">
+        <text class="label">房源标题</text>
+        <input class="input" placeholder="请输入房源标题" value="{{form.title}}" bindinput="onInput" data-field="title"/>
+      </view>
+      <view class="form-item">
+        <text class="label">房源地址</text>
+        <input class="input" placeholder="请输入详细地址" value="{{form.address}}" bindinput="onInput" data-field="address"/>
+      </view>
+      <view class="form-item">
+        <text class="label">房型</text>
+        <picker mode="selector" range="{{roomTypes}}" value="{{roomTypeIndex}}" bindchange="onRoomTypeChange">
+          <view class="picker">{{roomTypes[roomTypeIndex] || '请选择房型'}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 租赁信息 -->
+    <view class="form-section">
+      <text class="section-title">租赁信息</text>
+      <view class="form-item">
+        <text class="label">月租金（元）</text>
+        <input class="input" type="digit" placeholder="请输入月租金" value="{{form.price}}" bindinput="onInput" data-field="price"/>
+      </view>
+      <view class="form-item">
+        <text class="label">押金（元）</text>
+        <input class="input" type="digit" placeholder="请输入押金" value="{{form.deposit}}" bindinput="onInput" data-field="deposit"/>
+      </view>
+      <view class="form-item">
+        <text class="label">状态</text>
+        <picker mode="selector" range="{{statusOptions}}" value="{{statusIndex}}" bindchange="onStatusChange">
+          <view class="picker">{{statusOptions[statusIndex] || '请选择状态'}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 房源描述 -->
+    <view class="form-section">
+      <text class="section-title">房源描述</text>
+      <textarea class="textarea" placeholder="请输入房源描述、配套设施等信息" value="{{form.description}}" bindinput="onInput" data-field="description" maxlength="500"/>
+      <text class="word-count">{{form.description.length || 0}}/500</text>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="submit-section">
+    <button class="submit-btn" bindtap="submitHouse">提交房源</button>
+  </view>
+</view>

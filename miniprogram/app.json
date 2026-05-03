@@ -2,6 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/house/house",
+    "pages/house/add/add",
+    "pages/house/detail/detail",
+    "pages/house/edit/edit",
     "pages/finance/finance",
     "pages/order/order",
     "pages/local/local",
