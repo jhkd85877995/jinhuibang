@@ -9,7 +9,7 @@ App({
         // env 参数说明：
         // 请先配置 CloudBase 环境 ID
         // 可在 CloudBase 控制台获取：https://tcb.cloud.tencent.com/dev
-        env: 'your-env-id', // TODO: 替换为您的 CloudBase 环境 ID
+        env: 'cloud1-d9gnze2b0f0f31520', // 锦汇邦 CloudBase 环境 ID
         traceUser: true,
       });
       console.log('CloudBase 初始化成功');
